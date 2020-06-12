@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col">
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs d-flex flex-row align-items-center">
+      <ul>
+        <li class="active"><a routerLink="/register"><i class="fa fa-angle-right" aria-hidden="true"></i>Register</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- Map Container -->
+<!-- Contact Us -->
+<div class="row">
+  <div class="col-lg-2 get_in_touch_col">
+  </div>
+  <div class="col-lg-8 get_in_touch_col">
+    <div class="get_in_touch_contents">
+      <h1>Sign Up</h1>
+      <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+        <div>
+          <app-input-register></app-input-register>
+        </div>
+        <div>
+          <button id="review_submit" type="submit" class="red_button message_submit_btn trans_300" value="Submit"
+            (click)="onSubmit()">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="col-lg-2 get_in_touch_col">
+  </div>
+</div>
