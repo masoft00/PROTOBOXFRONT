@@ -19,7 +19,12 @@
       <h1>Sign Up</h1>
       <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
         <div>
-          <app-input-register></app-input-register>
+          <input id="email" class="form_input input_name input_ph" type="email" name="email"
+            placeholder="Username /Email" required="required" data-error="Name is required." ngModel>
+
+          <input id="password" class="form_input input_email input_ph" type="password" name="password"
+            placeholder="Password" required="required" data-error="Valid password is required." ngModel>
+
         </div>
         <div>
           <button id="review_submit" type="submit" class="red_button message_submit_btn trans_300" value="Submit"

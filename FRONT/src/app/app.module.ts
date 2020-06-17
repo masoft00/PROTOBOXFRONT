@@ -24,7 +24,6 @@ import { LogInComponent } from './components/Authentication/log-in/log-in.compon
 import { SendmailComponent } from './components/sendmail/sendmail.component';
 import { SendmailService } from './services/sendmail/sendmail.service';
 import { RegisterComponent } from './components/Authentication/register/register.component';
-import { InputRegisterComponent } from './components/Authentication/input-register/input-register.component';
 import { HomeComponent } from './components/home/home.component';
 
 
@@ -39,7 +38,6 @@ import { HomeComponent } from './components/home/home.component';
     LogInComponent,
     SendmailComponent,
     RegisterComponent,
-    InputRegisterComponent,
     HomeComponent,
     
   ],
