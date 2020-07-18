@@ -6,8 +6,9 @@ import { AppComponent } from './app.component';
 
 /* Angular Material */
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AngularMaterialModule } from './angular-material.module';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { MaterialModule } from './material/material.module';
+
 
 /* FormsModule */
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -28,6 +29,7 @@ import { HomeComponent } from './components/home/home.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,11 +47,11 @@ import { HomeComponent } from './components/home/home.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AngularMaterialModule,
     ReactiveFormsModule,
     FormsModule,
     FlexLayoutModule,
     HttpClientModule,
+    MaterialModule,
     
   ],
   providers: [SendmailService],

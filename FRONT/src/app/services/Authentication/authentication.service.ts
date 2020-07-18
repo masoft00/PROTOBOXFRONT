@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthenticationModel } from './AuthenticationModel';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
@@ -29,8 +29,8 @@ export class AuthenticationService {
   // CETTE METHODE ME PERTMET DE DECODER LE TOKEN
   parsejwt(token: any) {
     let jwtHelper = new JwtHelperService();
-    let objJWT    = jwtHelper.decodeToken(token);
-    this.email    = objJWT.email;
+    let objJWT = jwtHelper.decodeToken(token);
+    this.email = objJWT.email;
     localStorage.setItem('email', this.email);
   }
 
@@ -43,5 +43,8 @@ export class AuthenticationService {
     return this.http.put(this.baseurl + 'connected/update', authentication);
   }
 
+  getlisteusers() {
+    return this.http.get(this.baseurl + 'lister');
+  }
 
 }
