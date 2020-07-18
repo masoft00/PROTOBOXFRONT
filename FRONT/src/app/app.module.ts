@@ -7,8 +7,7 @@ import { AppComponent } from './app.component';
 /* Angular Material */
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { MaterialModule } from './material/material.module';
-
+import { AngularMaterialModule } from './material/angular-material.module';
 
 /* FormsModule */
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -24,10 +23,8 @@ import { Navbarli2Component } from './components/navbarli2/navbarli2.component';
 import { LogInComponent } from './components/Authentication/log-in/log-in.component';
 import { SendmailComponent } from './components/sendmail/sendmail.component';
 import { SendmailService } from './services/sendmail/sendmail.service';
-import { RegisterComponent } from './components/Authentication/register/register.component';
 import { HomeComponent } from './components/home/home.component';
-
-
+import { RegisterComponent } from './components/Authentication/register/register.component';
 
 
 @NgModule({
@@ -51,8 +48,7 @@ import { HomeComponent } from './components/home/home.component';
     FormsModule,
     FlexLayoutModule,
     HttpClientModule,
-    MaterialModule,
-    
+    AngularMaterialModule,  
   ],
   providers: [SendmailService],
   bootstrap: [AppComponent],
