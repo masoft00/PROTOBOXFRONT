@@ -37,11 +37,10 @@ export class SendmailComponent implements OnInit {
       timer: 1500
     })
     //Cette fonction per;et de rafléchir la page
-    function refresh() { window.location.reload(false);
-    }
-    refresh();
-    error => this.error = error
-    
+    // function refresh() { window.location.reload(false);
+    // }
+    // refresh();
+    // error => this.error = error
   }
 
 }
