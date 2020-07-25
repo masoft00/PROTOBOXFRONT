@@ -39,12 +39,14 @@ export class AuthenticationService {
     return this.http.get<AuthenticationModel>(this.baseurl + 'authentications' + '/' + id);
   }
 
+    //fonction pour modifier un user
   updateUser(authentication: AuthenticationModel) {
     return this.http.put(this.baseurl + 'connected/update', authentication);
   }
 
+  //fonction pour avoir tous les users
   getlisteusers() {
-    return this.http.get(this.baseurl + 'lister');
+    return this.http.get<AuthenticationModel>(this.baseurl + 'lister');
   }
 
 }
