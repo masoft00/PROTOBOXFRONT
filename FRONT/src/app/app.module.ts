@@ -23,7 +23,6 @@ import { Navbarli2Component } from './components/navbarli2/navbarli2.component';
 import { LogInComponent } from './components/Authentication/log-in/log-in.component';
 import { SendmailComponent } from './components/sendmail/sendmail.component';
 import { SendmailService } from './services/sendmail/sendmail.service';
-import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/Authentication/register/register.component';
 
 
@@ -37,7 +36,6 @@ import { RegisterComponent } from './components/Authentication/register/register
     LogInComponent,
     SendmailComponent,
     RegisterComponent,
-    HomeComponent,
     
   ],
   imports: [
