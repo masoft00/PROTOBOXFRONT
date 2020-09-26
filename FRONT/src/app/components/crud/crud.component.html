@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col">
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs d-flex flex-row align-items-center">
+            <ul>
+                <li class="active"><a routerlink="/sendmail"><i class="fa fa-angle-right" aria-hidden="true"></i>Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Map Container -->
+<!-- Contact Us -->
+<div class="row">
+    <div class="col-lg-12 get_in_touch_col">
+        <div class="get_in_touch_contents">
+            <h1>CRUD</h1>
+            <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+                <div class="form-group">
+                    <input class="form_input input_name input_ph" placeholder="Email" type="email" name="destination" id="destination" [(ngModel)]="model.destination" required #destination="ngModel">
+                    <input id="input_email" class="form_input input_email input_ph" type="text" [(ngModel)]="model.subject" name="subject" placeholder="Object du méssage" required subject #subject="ngModel">
+                    <textarea name="message" id="message" class="input_ph input_message" type="text" [(ngModel)]="model.message" placeholder="Message" rows="3" required data-error="Please, write us a message."></textarea>
+                </div>
+                <div>
+                    <button id="review_submit" type="submit" class="red_button message_submit_btn trans_300" value="submit" (click)="onSend()">send
+          message </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

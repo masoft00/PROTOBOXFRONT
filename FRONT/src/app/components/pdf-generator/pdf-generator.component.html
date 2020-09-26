@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col">
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs d-flex flex-row align-items-center">
+            <ul>
+                <li class="active"><a routerlink="/sendmail"><i class="fa fa-angle-right" aria-hidden="true"></i>PdfGenerator</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Map Container -->
+<!-- Contact Us -->
+<div class="row">
+    <div class="col-lg-12 get_in_touch_col">
+        <div class="get_in_touch_contents">
+            <h1>Pdf Generator</h1>
+            <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+                <div class="form-group">
+                    <textarea name="content" id="content" class="input_ph input_message" type="text" [(ngModel)]="model.content" placeholder="Content" rows="80" required data-error="Please, write a content."></textarea>
+                </div>
+                <div>
+                    <button id="review_submit" type="submit" class="red_button message_submit_btn trans_300" value="submit" (click)="onGenerate()">Generate Pdf File</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -24,6 +24,9 @@ import { LogInComponent } from './components/Authentication/log-in/log-in.compon
 import { SendmailComponent } from './components/sendmail/sendmail.component';
 import { SendmailService } from './services/sendmail/sendmail.service';
 import { RegisterComponent } from './components/Authentication/register/register.component';
+import { CrudComponent } from './components/crud/crud.component';
+import { PdfGeneratorComponent } from './components/pdf-generator/pdf-generator.component';
+import { ListUserComponent } from './components/list-user/list-user.component';
 
 
 @NgModule({
@@ -36,6 +39,9 @@ import { RegisterComponent } from './components/Authentication/register/register
     LogInComponent,
     SendmailComponent,
     RegisterComponent,
+    CrudComponent,
+    PdfGeneratorComponent,
+    ListUserComponent,
     
   ],
   imports: [

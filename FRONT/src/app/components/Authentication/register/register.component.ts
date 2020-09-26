@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { AuthenticationService } from 'src/app/services/Authentication/authentication.service';
 // import custom validator to validate that password and confirm password fields match
 import { MustMatch } from './_helpers/must-match.validator';
-
-import { AuthenticationService } from 'src/app/services/Authentication/authentication.service';
 import Swal from "sweetalert2";
 import { Router } from '@angular/router';
 
@@ -19,34 +17,34 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private router     : Router, 
-    private regService : AuthenticationService,
-    ) { }
+    private router: Router,
+    private regService: AuthenticationService,
+  ) { }
 
   ngOnInit() {
-      this.registerForm = this.formBuilder.group({
-          // firstName: ['', Validators.required],
-          // lastName: ['', Validators.required],
-          email          : ['', [Validators.required, Validators.email]],
-          password       : ['', [Validators.required, Validators.minLength(6)]],
-          confirmPassword: ['', Validators.required]
-      }, {
-          validator: MustMatch('password', 'confirmPassword')
-      });
+    this.registerForm = this.formBuilder.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirmPassword: ['', Validators.required]
+    }, {
+      validator: MustMatch('password', 'confirmPassword')
+    });
   }
 
   // convenience getter for easy access to form fields
   get f() { return this.registerForm.controls; }
 
-   onSubmit() {
-        this.submitted = true;
-        // stop here if form is invalid
-        if (this.registerForm.invalid) {
-            return;
-        }
+  onSubmit() {
+    this.submitted = true;
+    // stop here if form is invalid
+    if (this.registerForm.invalid) {
+      return;
+    }
 
 
-      this.regService.creatUser(this.registerForm.value)
+    this.regService.creatUser(this.registerForm.value)
       .subscribe(resp => {
         console.log(this.registerForm.value)
         this.router.navigateByUrl('/login');
@@ -72,6 +70,6 @@ export class RegisterComponent implements OnInit {
           'error'
         )
       });
-    }
+  }
 
 }
