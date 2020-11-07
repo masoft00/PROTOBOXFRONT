@@ -12,7 +12,7 @@ import { PdfGeneratorService } from 'src/app/services/PdfGenerator/pdf-generator
 export class PdfGeneratorComponent implements OnInit {
 
   constructor(
-    private pdfService: PdfGeneratorService, 
+    private pdfService: PdfGeneratorService,
   ) { }
 
   ngOnInit() {
@@ -23,10 +23,10 @@ export class PdfGeneratorComponent implements OnInit {
     this.pdfService.pdfgen(data)
       .subscribe(resp => {
         const Toast = Swal.mixin({
-          toast            : true,
-          position         : 'top-end',
+          toast: true,
+          position: 'top-end',
           showConfirmButton: false,
-          timer            : 3000,
+          timer: 3000,
           onOpen: (toast) => {
             toast.addEventListener('mouseenter', Swal.stopTimer)
             toast.addEventListener('mouseleave', Swal.resumeTimer)
@@ -34,7 +34,7 @@ export class PdfGeneratorComponent implements OnInit {
         })
 
         Toast.fire({
-          icon : 'success',
+          icon: 'success',
           title: 'pdf Generale'
         })
       }, err => {
