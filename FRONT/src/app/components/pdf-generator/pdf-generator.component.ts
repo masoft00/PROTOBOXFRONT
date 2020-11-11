@@ -1,49 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-
-import { Router } from '@angular/router';
-import Swal from "sweetalert2";
-import { PdfGeneratorService } from 'src/app/services/PdfGenerator/pdf-generator.service';
+import { Component} from '@angular/core';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 @Component({
   selector: 'app-pdf-generator',
   templateUrl: './pdf-generator.component.html',
   styleUrls: ['./pdf-generator.component.css']
 })
-export class PdfGeneratorComponent implements OnInit {
+export class PdfGeneratorComponent{
+  title = 'html-to-pdf-angular-application';
+  public convetToPDF() {
+    var data = document.getElementById('contentToConvert');
+    html2canvas(data).then(canvas => {
+      // Few necessary setting options
+      var imgWidth = 208;
+      var pageHeight = 295;
+      var imgHeight = canvas.height * imgWidth / canvas.width;
+      var heightLeft = imgHeight;
 
-  constructor(
-    private pdfService: PdfGeneratorService,
-  ) { }
-
-  ngOnInit() {
+      const contentDataURL = canvas.toDataURL('image/png')
+      let pdf = new jsPDF('p', 'mm', 'a4'); // A4 size page of PDF
+      var position = 0;
+      pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
+      pdf.save('new-file.pdf'); // Generated PDF
+    });
   }
-
-  //Cette methode me permet de se connecter à mon API
-  onGenerate(data) {
-    this.pdfService.pdfgen(data)
-      .subscribe(resp => {
-        const Toast = Swal.mixin({
-          toast: true,
-          position: 'top-end',
-          showConfirmButton: false,
-          timer: 3000,
-          onOpen: (toast) => {
-            toast.addEventListener('mouseenter', Swal.stopTimer)
-            toast.addEventListener('mouseleave', Swal.resumeTimer)
-          }
-        })
-
-        Toast.fire({
-          icon: 'success',
-          title: 'pdf Generale'
-        })
-      }, err => {
-        Swal.fire(
-          'Veuillez mettre du contenue',
-          'SVP',
-          'error'
-        )
-      });
-  }
-
+  
 }

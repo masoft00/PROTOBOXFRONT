@@ -21,7 +21,7 @@ export class LogInComponent implements OnInit {
       .subscribe(resp => {
         const jwt = resp.body.token;
         this.LogService.saveJwtToken(jwt);
-        this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/ListUsers');
 
         const Toast = Swal.mixin({
           toast            : true,

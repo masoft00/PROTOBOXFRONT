@@ -1,28 +1,73 @@
-<div class="row">
-    <div class="col">
-        <!-- Breadcrumbs -->
-        <div class="breadcrumbs d-flex flex-row align-items-center">
-            <ul>
-                <li class="active"><a routerlink="/sendmail"><i class="fa fa-angle-right" aria-hidden="true"></i>PdfGenerator</a>
-                </li>
-            </ul>
+<header class="header trans_300">
+    <!-- Top Navigation -->
+    <div class="top_nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="top_nav_left">Avec Proto-Box prototyper devient plus simple</div>
+                </div>
+                <div class="col-md-6 text-right">
+                    <div class="top_nav_right">
+                        <ul class="top_nav_menu">
+                            <!-- Currency / Language / My Account -->
+                            <li class="account">
+                                <a routerLink="/login">
+                  My Account
+                  <i class="fa fa-angle-down"></i>
+                </a>
+                                <ul class="account_selection">
+                                    <li><a routerLink="/login"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+                                    <li><a routerLink="/register"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <!-- Main Navigation -->
+    <div class="main_nav_container">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-right">
+                    <div class="logo_container">
+                        <a routerLink="/">proto-<span>box</span></a>
+                    </div>
+                    <app-navbar></app-navbar>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<pre class="col-lg-12">
+<div id="content">
+<div>
 </div>
-<!-- Map Container -->
-<!-- Contact Us -->
-<div class="row">
-    <div class="col-lg-12 get_in_touch_col">
-        <div class="get_in_touch_contents">
-            <h1>Pdf Generator</h1>
-            <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
-                <div class="form-group">
-                    <textarea name="content" id="content" class="input_ph input_message" type="text" [(ngModel)]="model.content" placeholder="Content" rows="20" required data-error="Please, write a content."></textarea>
-                </div>
-                <div>
-                    <button id="review_submit" type="submit" class="red_button message_submit_btn trans_300" value="submit" (click)="onGenerate()">Generate Pdf File</button>
-                </div>
-            </form>
-        </div>
-    </div>
+</div>
+<div>
+<div id="contentToConvert" >
+Nunc nulla. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Maecenas ullamcorper, dui et placerat
+feugiat, eros pede varius nisi, condimentum viverra felis nunc et lorem. Vestibulum dapibus nunc ac augue. Phasellus
+blandit leo ut odio.
+
+Quisque id mi. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Sed lectus. Cras varius. Mauris
+turpis nunc, blandit et, volutpat molestie, porta ut, ligula.
+
+Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam. Duis vel nibh at velit scelerisque suscipit.
+Curabitur a felis in nunc fringilla tristique. Nunc nulla. Vestibulum eu odio.
+
+Suspendisse non nisl sit amet velit hendrerit rutrum. Pellentesque egestas, neque sit amet convallis pulvinar, justo
+nulla eleifend augue, ac auctor orci leo non est. Cras ultricies mi eu turpis hendrerit fringilla. Fusce risus nisl,
+viverra et, tempor et, pretium in, sapien. Fusce risus nisl, viverra et, tempor et, pretium in, sapien.
+
+Vestibulum fringilla pede sit amet augue. Donec vitae sapien ut libero venenatis faucibus. Etiam iaculis nunc ac metus.
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id purus. Nulla neque
+dolor, sagittis eget, iaculis quis, molestie non, velit.
+</div>
+</div>
+</pre>
+
+<div>
+    <button id="review_submit" type="submit" class="red_button message_submit_btn trans_300" (click)="convetToPDF()">Générer un PDF</button>
 </div>

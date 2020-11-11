@@ -7,20 +7,27 @@ import { LogInComponent } from './components/Authentication/log-in/log-in.compon
 import { SendmailComponent } from './components/sendmail/sendmail.component';
 import { RegisterComponent } from './components/Authentication/register/register.component';
 import { PdfGeneratorComponent } from './components/pdf-generator/pdf-generator.component';
-import { CrudComponent } from './components/crud/crud.component';
 import { ListUserComponent } from './components/list-user/list-user.component';
+import { CrudCreateComponent } from './components/crud/crud-create/crud-create.component';
+import { CrudEditComponent } from './components/crud/crud-edit/crud-edit.component';
+import { CrudListComponent } from './components/crud/crud-list/crud-list.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
+
 
 
 const routes: Routes = [
-  { path: '', pathMatch        : 'full', redirectTo: '/' },
+  { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: 'navbar', component  : NavbarComponent },
   { path: 'footer', component  : FooterComponent },
   { path: 'login', component   : LogInComponent },
   { path: 'sendmail', component: SendmailComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'pdfGenerator', component: PdfGeneratorComponent },
-  { path: 'Crud', component: CrudComponent },
-  { path: 'ListUsers', component: ListUserComponent }
+  { path: 'ListUsers', component: ListUserComponent },
+  { path: 'EditUsers/:id', component: EditUserComponent },
+  { path: 'CrudCreateComponent', component: CrudCreateComponent },
+  { path: 'CrudEditComponent/:id', component: CrudEditComponent },
+  { path: 'CrudListComponent', component: CrudListComponent },
 ];
 
 @NgModule({

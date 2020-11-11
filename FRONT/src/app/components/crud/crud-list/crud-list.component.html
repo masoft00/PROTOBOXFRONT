@@ -43,31 +43,48 @@
 <div class="row" id="ajouterBox">
     <div class="col-lg-12 get_in_touch_col">
         <div class="row">
-            <h1>Liste des utilisateurs</h1>
+            <div class="col-lg-4"><button id="AjouterCrud" type="submit" class="red_button message_submit_btn trans_300" value="submit" routerLink="/CrudCreateComponent">Ajouter</button>
+            </div>
+            <div class="col-lg-8">
+                <h1>CRUD</h1>
+            </div>
         </div>
         <div class="get_in_touch_contents">
 
             <!-- No data message -->
-            <p *ngIf="Authentication.length <= 0" class="no-data text-center">There is no agent added yet!</p>
+            <p *ngIf="Crudname.length <= 0" class="no-data text-center">There is no agent added yet!</p>
             <!-- agent list -->
-            <table class="table table-bordered" *ngIf="Authentication.length > 0">
+            <table class="table table-bordered" *ngIf="Crudname.length > 0">
                 <thead class="table-success">
                     <tr>
-                        <th scope="col">ID User</th>
-                        <th scope="col">Email</th>
-
+                        <th scope="col">Employe ID</th>
+                        <th scope="col">Prenom</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col center">Edit</th>
+                        <th scope="col center">Delete</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <tr *ngFor="let authentication of Authentication; let i = index">
-                        <th scope="row">{{authentication._id}}</th>
-                        <td>{{authentication.email}}</td>
-
-
+                    <tr *ngFor="let crudname of Crudname; let i = index">
+                        <th scope="row">{{crudname._id}}</th>
+                        <td>{{crudname.prenom}}</td>
+                        <td>{{crudname.nom}}</td>
+                        <td class="text-center edit-block">
+                            <span class="edit" [routerLink]="['/CrudEditComponent/', crudname._id]">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              </span>
+                        </td>
+                        <td class="text-center edit-block">
+                            <span class="delete" (click)="removeCrudname(crudname, i)">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+              </span>
+                        </td>
                     </tr>
                 </tbody>
+
             </table>
+
         </div>
     </div>
     <div class="col-lg-2 get_in_touch_col">

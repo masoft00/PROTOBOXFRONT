@@ -27,7 +27,6 @@ export class SendmailComponent implements OnInit {
   this.submitted = true;
     this.sendService.contactForm(this.model).subscribe(
     data => this.model = data,
-    
     ); 
     Swal.fire({
       position: 'top-end',

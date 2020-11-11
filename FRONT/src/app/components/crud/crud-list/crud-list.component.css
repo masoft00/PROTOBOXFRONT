@@ -1,0 +1,59 @@
+.fa {
+    display: inline-block;
+    font: normal normal normal 19px/1 FontAwesome !important;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+div#ajouterBox {
+    padding-top: 51px;
+}
+
+button#AjouterCrud {
+    margin-bottom: 31px;
+}
+
+.table-success,
+.table-success>td,
+.table-success>th {
+    background-color: #1e1e27;
+}
+
+.table-bordered thead td,
+.table-bordered thead th {
+    border-bottom-width: 2px;
+    color: #FFF;
+    text-align: center;
+}
+
+.table-bordered td,
+.table-bordered th {
+    border: 1px solid #e9ecef;
+    text-align: center;
+}
+
+.fa-edit:before,
+.fa-pencil-square-o:before,
+.fa-trash-o:before {
+    cursor: pointer;
+}
+
+.fa-trash-o:before {
+    content: "\f014";
+    color: red;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Poppins', sans-serif;
+    color: #282828;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+    text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+    font-size: 46px;
+}

@@ -24,9 +24,13 @@ import { LogInComponent } from './components/Authentication/log-in/log-in.compon
 import { SendmailComponent } from './components/sendmail/sendmail.component';
 import { SendmailService } from './services/sendmail/sendmail.service';
 import { RegisterComponent } from './components/Authentication/register/register.component';
-import { CrudComponent } from './components/crud/crud.component';
 import { PdfGeneratorComponent } from './components/pdf-generator/pdf-generator.component';
 import { ListUserComponent } from './components/list-user/list-user.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
+import { CrudEditComponent } from './components/crud/crud-edit/crud-edit.component';
+import { CrudCreateComponent } from './components/crud/crud-create/crud-create.component';
+import { CrudListComponent } from './components/crud/crud-list/crud-list.component';
+import { CrudService } from './services/Crud/crud.service';
 
 
 @NgModule({
@@ -39,9 +43,12 @@ import { ListUserComponent } from './components/list-user/list-user.component';
     LogInComponent,
     SendmailComponent,
     RegisterComponent,
-    CrudComponent,
     PdfGeneratorComponent,
     ListUserComponent,
+    EditUserComponent,
+    CrudEditComponent,
+    CrudCreateComponent,
+    CrudListComponent,
     
   ],
   imports: [
@@ -54,9 +61,10 @@ import { ListUserComponent } from './components/list-user/list-user.component';
     HttpClientModule,
     AngularMaterialModule,  
   ],
-  providers: [SendmailService],
+  providers: [SendmailService,CrudService],
   bootstrap: [AppComponent],
-  schemas  : [CUSTOM_ELEMENTS_SCHEMA]
+  schemas  : [CUSTOM_ELEMENTS_SCHEMA],
+  entryComponents:[RegisterComponent]
 })
 
 export class AppModule { }

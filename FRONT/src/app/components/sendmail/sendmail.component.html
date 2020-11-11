@@ -1,21 +1,51 @@
-<div class="row">
-    <div class="col">
-        <!-- Breadcrumbs -->
-        <div class="breadcrumbs d-flex flex-row align-items-center">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li class="active"><a routerlink="/sendmail"><i class="fa fa-angle-right" aria-hidden="true"></i>Contact</a>
-                </li>
-            </ul>
+<header class="header trans_300">
+    <!-- Top Navigation -->
+    <div class="top_nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="top_nav_left">Avec Proto-Box prototyper devient plus simple</div>
+                </div>
+                <div class="col-md-6 text-right">
+                    <div class="top_nav_right">
+                        <ul class="top_nav_menu">
+                            <!-- Currency / Language / My Account -->
+                            <li class="account">
+                                <a routerLink="/login">
+                  My Account
+                  <i class="fa fa-angle-down"></i>
+                </a>
+                                <ul class="account_selection">
+                                    <li><a routerLink="/login"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+                                    <li><a routerLink="/register"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+    <!-- Main Navigation -->
+    <div class="main_nav_container">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-right">
+                    <div class="logo_container">
+                        <a routerLink="/">proto-<span>box</span></a>
+                    </div>
+                    <app-navbar></app-navbar>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 <!-- Map Container -->
 <!-- Contact Us -->
 <div class="row">
     <div class="col-lg-12 get_in_touch_col">
         <div class="get_in_touch_contents">
-            <h1>Contact Us !</h1>
+            <h1 class="h1head">Contact Us !</h1>
             <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
                 <div class="form-group">
                     <input class="form_input input_name input_ph" placeholder="Email" type="email" name="destination" id="destination" [(ngModel)]="model.destination" required #destination="ngModel">

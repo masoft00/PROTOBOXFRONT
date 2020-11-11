@@ -1,9 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
-import { ListUserService } from 'src/app/services/listUser/list-user.service';
-import { AuthenticationModel } from 'src/app/services/Authentication/AuthenticationModel'
+import { Component, OnInit} from '@angular/core';
+import { AuthenticationService } from 'src/app/services/Authentication/authentication.service';
+
 
 @Component({
   selector: 'app-list-user',
@@ -11,35 +8,21 @@ import { AuthenticationModel } from 'src/app/services/Authentication/Authenticat
   styleUrls: ['./list-user.component.css']
 })
 export class ListUserComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'email', 'edit', 'delete'];
-  dataSource: MatTableDataSource<AuthenticationModel>;
+  Authentication: any = [];
+  constructor(
+    private authService: AuthenticationService,
 
-  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
-  @ViewChild(MatSort, { static: false }) sort: MatSort;
-
-  Listeuser: AuthenticationModel[];
-  lister: any;
-
-  constructor(private ListUsers: ListUserService) { }
-  users;
-
-  ngOnInit(): void {
-
-    this.ListUsers.getlisteusers().subscribe(
-      (Listeuser: AuthenticationModel[]) => {
-        this.users = Listeuser;
-        this.dataSource = new MatTableDataSource(this.users);
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
-      }, err => {
-        console.log(err);
-      })
+  ) {
+    this.readAuthentication();
   }
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+  ngOnInit() {
 
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
   }
+  readAuthentication() {
+    this.authService.getlisteusers().subscribe((data) => {
+      this.Authentication = data;
+    })
+  }
+
+ 
 }

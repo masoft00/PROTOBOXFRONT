@@ -40,34 +40,29 @@
         </div>
     </div>
 </header>
-<div class="row" id="ajouterBox">
+<!-- Map Container -->
+<!-- Contact Us -->
+<div class="row">
+    <div class="col-lg-2 get_in_touch_col">
+    </div>
     <div class="col-lg-12 get_in_touch_col">
-        <div class="row">
-            <h1>Liste des utilisateurs</h1>
-        </div>
         <div class="get_in_touch_contents">
 
-            <!-- No data message -->
-            <p *ngIf="Authentication.length <= 0" class="no-data text-center">There is no agent added yet!</p>
-            <!-- agent list -->
-            <table class="table table-bordered" *ngIf="Authentication.length > 0">
-                <thead class="table-success">
-                    <tr>
-                        <th scope="col">ID User</th>
-                        <th scope="col">Email</th>
+            <div class="row justify-content-center">
+                <div class="col-md-12 register-employee">
 
-                    </tr>
-                </thead>
+                    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <input class="form_input input_name input_ph" placeholder="prenom" type="text" name="prenom" formControlName="prenom">
+                            <input id="input_email" class="form_input input_email input_ph" type="text" name="nom" placeholder="Nom" formControlName="nom">
 
-                <tbody>
-                    <tr *ngFor="let authentication of Authentication; let i = index">
-                        <th scope="row">{{authentication._id}}</th>
-                        <td>{{authentication.email}}</td>
-
-
-                    </tr>
-                </tbody>
-            </table>
+                        </div>
+                        <div>
+                            <button id="review_submit" type="submit" class="red_button message_submit_btn trans_300" value="submit">Modifier</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
     <div class="col-lg-2 get_in_touch_col">
